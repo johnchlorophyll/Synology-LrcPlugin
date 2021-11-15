@@ -248,6 +248,9 @@ class LudysuNetEaseLrc {
         $curl = curl_init();
         curl_setopt_array($curl, array(
             CURLOPT_URL => "http://music.163.com/api/search/get/web",
+            CURLOPT_HTTPHEADER => array(
+                "X-Real-IP: 1.1.0.0"
+            ),
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POST => true,
             CURLOPT_POSTFIELDS => http_build_query($params),
